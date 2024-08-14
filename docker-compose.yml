@@ -1,0 +1,12 @@
+services:
+  consumer:
+    build: /consumer
+    container_name: consumer
+    ports:
+      - "8080:8080"
+
+  producer:
+    build: /producer
+    container_name: producer
+    ports:
+      - "8081:8081"
