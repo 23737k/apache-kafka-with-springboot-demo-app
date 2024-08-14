@@ -1,4 +1,4 @@
-package com.kentidev.producer.kafka.config.producer;
+package com.kentidev.producer.kafka.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

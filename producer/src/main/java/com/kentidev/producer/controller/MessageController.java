@@ -1,6 +1,6 @@
 package com.kentidev.producer.controller;
 
-import com.kentidev.producer.kafka.config.producer.KafkaProducer;
+import com.kentidev.producer.kafka.producer.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
