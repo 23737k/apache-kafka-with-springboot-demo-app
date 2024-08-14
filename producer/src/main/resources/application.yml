@@ -1,6 +1,13 @@
 spring:
   application:
     name: producer
+
+  kafka:
+    producer:
+      bootstrap-servers: broker:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
 server:
   port: 8081
 

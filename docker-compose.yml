@@ -4,12 +4,16 @@ services:
     container_name: consumer
     ports:
       - "8080:8080"
+    depends_on:
+      - broker
 
   producer:
     build: /producer
     container_name: producer
     ports:
       - "8081:8081"
+    depends_on:
+      - broker
 
   #Kafka
   zookeeper:
@@ -26,8 +30,8 @@ services:
     image: confluentinc/cp-kafka:7.5.0
     container_name: broker
     ports:
-      - "9092:9092"
-      - "29092:29092"
+      - "9092:9092"   #Este puerto es utilizado para conectarse desde afuera de Docker
+      - "29092:29092"  #Este puerto es para conectarse desde el mismo entorno de Docker (misma red, de un contenedor a otro)
     depends_on:
       - zookeeper
     restart: on-failure
