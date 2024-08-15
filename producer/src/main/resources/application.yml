@@ -6,8 +6,10 @@ spring:
     producer:
       bootstrap-servers: broker:29092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.header: false
+        spring.json.type.mapping: student:com.kentidev.producer.kafka.payload.Student
 server:
   port: 8081
 

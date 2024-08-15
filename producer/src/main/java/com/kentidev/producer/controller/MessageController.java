@@ -1,5 +1,6 @@
 package com.kentidev.producer.controller;
 
+import com.kentidev.producer.kafka.payload.Student;
 import com.kentidev.producer.kafka.producer.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,8 +18,8 @@ public class MessageController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public void createMessage(@RequestBody String message) {
-    kafkaProducer.send(message);
+  public void createMessage(@RequestBody Student student) {
+    kafkaProducer.send(student);
   }
 
 
